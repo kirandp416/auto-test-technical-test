@@ -20,10 +20,12 @@ public class MatrixOperationsTest {
         Matrix matrix1 = Matrix.identity(size);
         return matrix1;
     }
-    public Matrix createMatrix(double[][] array){
+
+    public Matrix createMatrix(double[][] array) {
         Matrix matrix1 = new Matrix(array);
         return matrix1;
     }
+
 
     public Matrix addTwoMatrices(Matrix matrix1, Matrix matrix2) {
 
