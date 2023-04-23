@@ -8,6 +8,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import matrix.Matrix;
 
+import java.util.List;
+
 import static org.junit.Assert.assertThrows;
 
 
@@ -18,8 +20,7 @@ public class Add_Matrices_Steps {
     Matrix matrix2;
     Matrix resultMatrix;
     Exception exception;
-    double[] array1;
-    double[] array2;
+    double[][] array;
 
     public Add_Matrices_Steps(MatrixOperationsTest matrixOperationsTest) {
 
@@ -71,5 +72,28 @@ public class Add_Matrices_Steps {
         assertThrows(IllegalArgumentException.class,()-> {
             throw exception;
         });
+    }
+
+    @Given("an array of {string}")
+    public void anArrayOf(String arg0) {
+
+    }
+
+
+
+    @Given("an array of values")
+    public void anArrayOfValues(DataTable dataTable) {
+        List<List<String>> data = dataTable.asLists(String.class);
+        array= matrixOperationsTest.create2DMatrix(data);
+        matrix1=matrixOperationsTest.createMatrix(array);
+        this.matrix1=matrix1;
+    }
+
+    @And("another array of values")
+    public void anotherArrayOfValues(DataTable dataTable) {
+        List<List<String>> data = dataTable.asLists(String.class);
+        array= matrixOperationsTest.create2DMatrix(data);
+        matrix2=matrixOperationsTest.createMatrix(array);
+        this.matrix2=matrix2;
     }
 }
