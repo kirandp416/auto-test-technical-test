@@ -13,6 +13,7 @@ Feature: Add two matrices
     When we add these matrices
     Then we should get a matrix with values added from respective rows and columns
 
+
   Scenario: Add two matrices of same size from given array, Transpose them
 
     Given an array of values
@@ -111,6 +112,19 @@ Feature: Add two matrices
     And we transpose the generated matrices
     When we add these matrices
     Then we should see an IllegalArgumentExceptionError "java.lang.IllegalArgumentException: The dimensions of the matrices much match"
+
+  Scenario: Add two matrices of same size from given larger array
+
+    Given an array of values
+      | 1111111111111111111111111111111111111111111111111111111111111111 | -55555555555555555555555555555555555555552 | 3 |
+      | 4                                                                | 5                                          | 6 |
+      | 7                                                                | 8                                          | 9 |
+    And another array of values
+      | 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999992 | 2                                                                                                                | 3                                                                                                                                                               |
+      | 4                                                                                                                                                              | 5688888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 | 6                                                                                                                                                               |
+      | 7                                                                                                                                                              | 8                                                                                                                | -97777777777777777777777777777651536156555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555558 |
+    When we add these matrices
+    Then we should get a matrix with values added from respective rows and columns
 
 
 
