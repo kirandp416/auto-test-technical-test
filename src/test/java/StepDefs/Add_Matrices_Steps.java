@@ -76,8 +76,8 @@ public class Add_Matrices_Steps {
 
     @Given("an array of values")
     public void anArrayOfValues(DataTable dataTable) {
-        List<List<String>> data = dataTable.asLists(String.class);
-        array = matrixOperationsTest.create2DMatrix(data);
+        List<List<String>> matrixData = dataTable.asLists(String.class);
+        array = matrixOperationsTest.create2DMatrix(matrixData);
         matrix1 = matrixOperationsTest.createMatrix(array);
         this.matrix1 = matrix1;
     }
@@ -92,7 +92,7 @@ public class Add_Matrices_Steps {
 
     @And("we transpose the generated matrices")
     public void weTransposeTheGeneratedMatrices() {
-        this.matrix1=matrix1.transpose();
-        this.matrix2=matrix2.transpose();
+        this.matrix1 = matrix1.transpose();
+        this.matrix2 = matrix2.transpose();
     }
 }

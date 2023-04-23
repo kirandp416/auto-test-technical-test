@@ -41,10 +41,10 @@ public class MatrixOperationsTest {
         }
     }
 
-    public double[][] create2DMatrix(List<List<String>> data) {
-        double[][] dataArray = new double[data.size()][];
-        for (int i = 0; i < data.size(); i++) {
-            List<String> row = data.get(i);
+    public double[][] create2DMatrix(List<List<String>> matrixData) {
+        double[][] dataArray = new double[matrixData.size()][];
+        for (int i = 0; i < matrixData.size(); i++) {
+            List<String> row = matrixData.get(i);
             dataArray[i] = new double[row.size()];
             for (int j = 0; j < row.size(); j++) {
                 dataArray[i][j] = Double.parseDouble(row.get(j));
