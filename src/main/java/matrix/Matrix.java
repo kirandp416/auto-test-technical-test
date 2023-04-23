@@ -27,7 +27,7 @@ public final class Matrix
     * @param rows The number of rows
     * @param columns The number of columns
     */
-   private Matrix( int rows, int columns )
+   private Matrix(int rows, int columns)
    {
       this.rows = rows;
       this.columns = columns;
